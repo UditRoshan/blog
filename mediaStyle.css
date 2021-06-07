@@ -1,0 +1,216 @@
+@media (min-width:600px) {
+
+    body {
+        position: relative;
+    }
+
+    .firstSection {
+        display: flex;
+        flex-direction: row-reverse;
+        border: none;
+        background: none;
+    }
+
+    .firstSection::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 4%;
+        width: 96%;
+        height: 100%;
+        animation: reachtop 1s forwards;
+    }
+
+    .firstSection::before {
+        content: '';
+        display: none;
+    }
+
+    nav {
+        display: block;
+        width: 4vw;
+        background-color: rgb(29, 29, 29);
+        position: fixed;
+        left: 0%;
+        height: 100vh;
+        z-index: 5;
+    }
+
+    .mainSection {
+        width: 96vw;
+        height: 100vh;
+        border: none;
+        background-color: transparent;
+        background-image: url(images/2.jpg);
+        background-position: bottom;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden    ;
+    }
+
+    .mainSection h1 {
+        font-size: 3.5rem;
+        text-align: center;
+        padding: 1rem 0;
+        letter-spacing: 2px;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: rgb(29, 29, 29);
+        display: block;
+        width: 100%;
+        z-index: 2;
+        animation: reachtop 1s forwards;
+    }
+
+    @keyframes reachtop {
+        to {
+            top: 0%;
+        }
+    }
+
+    .mainSection .effect {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%);
+        width: 55%;
+        height: 500px;
+        background-color: rgb(29, 29, 29);
+        z-index: 2;
+        animation: reachtopwiththem 1s forwards;
+    }
+
+    @keyframes reachtopwiththem {
+        to {
+            top: 17%;
+        }
+    }
+
+    .mainSection .effect p {
+        padding: 1rem;
+        font-size: 6rem;
+        width: max-content;
+        position: relative;
+    }
+
+    .mainSection .effect p::before {
+        content: '';
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 0%;
+        left: 0%;
+        background-color: rgb(29, 29, 29);
+        animation: typewritter 4s steps(19) 1s forwards;
+    }
+
+    @keyframes typewritter {
+        from {
+            left: 0%;
+        }
+        to {
+            left: 100%;
+        }
+    }
+
+    .mainSection .effect p::after {
+        content: '';
+        position: absolute;
+        top: 0%;
+        bottom: 0%;
+        right: 0%;
+        left: 0%;
+        width: 20px ;
+        background-color: white;
+        animation: typewritter 4s steps(19) 1s forwards,
+                   blink 0.6s infinite;
+    }
+
+    @keyframes blink {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
+    }
+
+    .hamburgerLines {
+        display: none;
+    }
+
+    .hamburgerMenu {
+        position: fixed;
+        left: 0%;
+        top: 50%;
+        transform: translate(0%,-50%);
+        width: 4vw;
+        height: 40vh;
+        visibility: visible;
+        z-index: 6;
+    }
+
+    .hamburgerMenu ul {
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .hamburgerMenu ul a {
+        display: block;
+        background-color: transparent;
+        position: relative;
+    }
+
+    .hamburgerMenu i {
+        color: orangered;
+        font-size: 3rem;
+        display: block;
+        text-align: center;
+    }
+
+    .hamburgerMenu i:hover ~ li {
+        opacity: 1;
+        transform: scale(1);
+        right: -180%;
+        z-index: 4;
+    }
+
+    .hamburgerMenu li {
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: -50%;
+        color: rgb(255, 255, 255);
+        font-weight: 600;
+        background-color: rgb(0, 0, 0);
+        padding: 1rem 2rem;
+        width: 120px;
+        text-align: center;
+        border-radius: 20px;
+        opacity: 0;
+        transform: scale(0);
+        transition: all 0.35s ease-in-out;
+    }
+
+    .wrapper {
+        position: relative;
+        height: 100vh;
+    }
+
+    .secondSection {
+        height:200vh;
+        width: 80vw;
+        display: flex;
+        background-color: rgb(29, 29, 29);
+        position: absolute;
+        top: 180%;
+        left: 52%;
+        transform: translate(-50%,-50%);
+    }
+
+}
